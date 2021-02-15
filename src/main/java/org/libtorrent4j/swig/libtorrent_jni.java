@@ -953,6 +953,8 @@ public class libtorrent_jni {
   public final static native String file_storage_file_path__SWIG_0(long jarg1, file_storage jarg1_, int jarg2, String jarg3);
   public final static native String file_storage_file_path__SWIG_1(long jarg1, file_storage jarg1_, int jarg2);
   public final static native long file_storage_file_size(long jarg1, file_storage jarg1_, int jarg2);
+  public final static native String file_storage_get_encrypt_path(long jarg1, file_storage jarg1_, int jarg2);
+  public final static native void file_storage_set_encrypt_path(long jarg1, file_storage jarg1_, int jarg2, String jarg3);
   public final static native boolean file_storage_pad_file_at(long jarg1, file_storage jarg1_, int jarg2);
   public final static native long file_storage_file_offset(long jarg1, file_storage jarg1_, int jarg2);
   public final static native int file_storage_file_num_pieces(long jarg1, file_storage jarg1_, int jarg2);
@@ -1589,6 +1591,7 @@ public class libtorrent_jni {
   public final static native long torrent_handle_overwrite_existing_get();
   public final static native void torrent_handle_read_piece(long jarg1, torrent_handle jarg1_, int jarg2);
   public final static native boolean torrent_handle_have_piece(long jarg1, torrent_handle jarg1_, int jarg2);
+  public final static native void torrent_handle_set_sequential_start(long jarg1, torrent_handle jarg1_, int jarg2);
   public final static native void torrent_handle_get_peer_info(long jarg1, torrent_handle jarg1_, long jarg2, peer_info_vector jarg2_);
   public final static native long torrent_handle_query_distributed_copies_get();
   public final static native long torrent_handle_query_accurate_download_counters_get();

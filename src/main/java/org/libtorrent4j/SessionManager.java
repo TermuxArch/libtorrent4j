@@ -483,7 +483,7 @@ public class SessionManager {
         }
 
         torrent_handle th = session.find_torrent(sha1.swig());
-        return th != null && th.is_valid() ? new TorrentHandle(th) : null;
+        return th != null && th.is_valid() ? new TorrentHandle(th, null, 0) : null;
     }
 
     /**
@@ -698,7 +698,7 @@ public class SessionManager {
                     torrent_info ti = th.torrent_file_ptr();
                     if (ti != null && ti.is_valid()) {
                         // torrent info is good, so is metadata
-                        data.set(new TorrentHandle(th).createTorrent());
+                        data.set(new TorrentHandle(th, null, 0).createTorrent());
                         signal.countDown();
                     }
                 } else {

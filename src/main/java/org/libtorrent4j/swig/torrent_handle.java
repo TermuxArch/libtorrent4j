@@ -44,6 +44,10 @@ public class torrent_handle {
     return libtorrent_jni.torrent_handle_have_piece(swigCPtr, this, piece);
   }
 
+  public void set_sequential_start(int piece) {
+    libtorrent_jni.torrent_handle_set_sequential_start(swigCPtr, this, piece);
+  }
+
   public void get_peer_info(peer_info_vector v) {
     libtorrent_jni.torrent_handle_get_peer_info(swigCPtr, this, peer_info_vector.getCPtr(v), v);
   }

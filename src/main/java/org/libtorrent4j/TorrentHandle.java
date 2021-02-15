@@ -79,15 +79,30 @@ public final class TorrentHandle
     private static final long REQUEST_STATUS_RESOLUTION_MILLIS = 500;
     // cache this zero flag for performance reasons
     private static final status_flags_t STATUS_FLAGS_ZERO = new status_flags_t();
-
+    private final String infoHash;
+    private int numFile;
     private long lastStatusRequestTime;
     private TorrentStatus lastStatus;
 
     /**
      * @param th the native object
      */
-    public TorrentHandle(torrent_handle th) {
+    public TorrentHandle(torrent_handle th, String infoHash, int numFile) {
         super(th);
+        this.infoHash = infoHash;
+        this.numFile = numFile;
+    }
+
+    public String getInfoHash() {
+        return infoHash;
+    }
+
+    public int getNumFile() {
+        return numFile;
+    }
+
+    public void setNumFile(int numFile) {
+        this.numFile = numFile;
     }
 
     /**
@@ -152,6 +167,9 @@ public final class TorrentHandle
         h.read_piece(piece);
     }
 
+    public void setSequentialStart (int index) {
+        h.set_sequential_start(index);
+    }
     /**
      * Returns true if this piece has been completely downloaded, and false
      * otherwise.

@@ -168,7 +168,7 @@ public final class SessionHandle
     public TorrentHandle findTorrent(Sha1Hash infoHash) {
         torrent_handle th = h.find_torrent(infoHash.swig());
 
-        return th != null && th.is_valid() ? new TorrentHandle(th) : null;
+        return th != null && th.is_valid() ? new TorrentHandle(th, null, 0) : null;
     }
 
     /**
@@ -182,7 +182,7 @@ public final class SessionHandle
         ArrayList<TorrentHandle> l = new ArrayList<>(size);
 
         for (int i = 0; i < size; i++) {
-            l.add(new TorrentHandle(v.get(i)));
+            l.add(new TorrentHandle(v.get(i), null, 0));
         }
 
         return l;
@@ -218,7 +218,7 @@ public final class SessionHandle
      */
     public TorrentHandle addTorrent(AddTorrentParams params, ErrorCode ec) {
         error_code e = new error_code();
-        TorrentHandle th = new TorrentHandle(h.add_torrent(params.swig(), e));
+        TorrentHandle th = new TorrentHandle(h.add_torrent(params.swig(), e), null, 0);
         ec.assign(e);
         return th;
     }

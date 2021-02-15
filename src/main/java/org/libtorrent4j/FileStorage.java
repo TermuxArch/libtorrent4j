@@ -326,6 +326,13 @@ public final class FileStorage {
         fs.set_name(name);
     }
 
+    public String getEncryptPath(int index) {
+        return fs.get_encrypt_path(index);
+    }
+
+    public void setEncryptPath(int index, String path) {
+        fs.set_encrypt_path(index, path);
+    }
     /**
      * Returns the full path to a file.
      *

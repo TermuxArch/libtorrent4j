@@ -160,6 +160,14 @@ public class file_storage {
     return libtorrent_jni.file_storage_file_size(swigCPtr, this, index);
   }
 
+  public String get_encrypt_path(int index) {
+    return libtorrent_jni.file_storage_get_encrypt_path(swigCPtr, this, index);
+  }
+
+  public void set_encrypt_path(int index, String encrypt_path) {
+    libtorrent_jni.file_storage_set_encrypt_path(swigCPtr, this, index, encrypt_path);
+  }
+
   public boolean pad_file_at(int index) {
     return libtorrent_jni.file_storage_pad_file_at(swigCPtr, this, index);
   }
