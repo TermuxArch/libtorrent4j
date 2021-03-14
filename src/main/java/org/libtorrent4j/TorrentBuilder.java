@@ -542,6 +542,8 @@ public final class TorrentBuilder {
      */
     public static final create_flags_t V1_ONLY = create_torrent.v1_only;
 
+    public static final create_flags_t CANONICAL_FILES = create_torrent.canonical_files;
+
     /**
      *
      */
