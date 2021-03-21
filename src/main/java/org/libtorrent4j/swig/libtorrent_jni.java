@@ -1093,7 +1093,6 @@ public class libtorrent_jni {
   public final static native boolean torrent_info_is_valid(long jarg1, torrent_info jarg1_);
   public final static native boolean torrent_info_priv(long jarg1, torrent_info jarg1_);
   public final static native boolean torrent_info_is_i2p(long jarg1, torrent_info jarg1_);
-  public final static native boolean torrent_info_v2_piece_hashes_verified(long jarg1, torrent_info jarg1_);
   public final static native int torrent_info_piece_size(long jarg1, torrent_info jarg1_, int jarg2);
   public final static native long torrent_info_hash_for_piece(long jarg1, torrent_info jarg1_, int jarg2);
   public final static native boolean torrent_info_is_loaded(long jarg1, torrent_info jarg1_);
@@ -1682,6 +1681,7 @@ public class libtorrent_jni {
   public final static native void torrent_handle_add_piece_bytes__SWIG_0(long jarg1, torrent_handle jarg1_, int jarg2, long jarg3, byte_vector jarg3_, long jarg4, add_piece_flags_t jarg4_);
   public final static native void torrent_handle_add_piece_bytes__SWIG_1(long jarg1, torrent_handle jarg1_, int jarg2, long jarg3, byte_vector jarg3_);
   public final static native long torrent_handle_torrent_file_ptr(long jarg1, torrent_handle jarg1_);
+  public final static native long torrent_handle_torrent_file_with_hashes_ptr(long jarg1, torrent_handle jarg1_);
   public final static native long torrent_handle_get_url_seeds(long jarg1, torrent_handle jarg1_);
   public final static native void torrent_handle_set_ssl_certificate_buffer_ex(long jarg1, torrent_handle jarg1_, long jarg2, byte_vector jarg2_, long jarg3, byte_vector jarg3_, long jarg4, byte_vector jarg4_);
   public final static native int torrent_handle_queue_position_ex(long jarg1, torrent_handle jarg1_);

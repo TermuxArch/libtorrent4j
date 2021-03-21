@@ -229,6 +229,14 @@ public final class TorrentHandle
         return ti != null ? new TorrentInfo(ti) : null;
     }
 
+    public TorrentInfo torrentFileWithHashes() {
+        if (!h.is_valid()) {
+            return null;
+        }
+        torrent_info ti = h.torrent_file_with_hashes_ptr();
+        return ti != null ? new TorrentInfo(ti) : null;
+    }
+
     /**
      * `status()`` will return a structure with information about the status
      * of this torrent. If the torrent_handle is invalid, it will throw
